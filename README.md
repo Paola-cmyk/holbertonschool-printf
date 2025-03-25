@@ -9,6 +9,6 @@ This is our midterm project of our Software Engeneering journey. We will collabo
 
 ## Authors
 
-Kevin Burgos
-Paola Gonzalez
-Nayshka Oliveras
+- Kevin Burgos
+- Paola Gonzalez
+- Nayshka Oliveras
