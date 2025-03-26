@@ -9,6 +9,5 @@ This is our midterm project of our Software Engeneering journey. We will collabo
 
 ## Authors
 
-- Kevin Burgos
 - <a href="https://github.com/Paola-cmyk" target="_blank">Paola Gonzalez</a>
 - <a href="https://github.com/LuvliNay" target="_blank">Nayska Oliveras</a>
