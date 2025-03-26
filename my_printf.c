@@ -1,6 +1,6 @@
+#include <limits.h>
 #include "printf.h"
 #include <stdio.h>
-#include <stadarg.h>
 
 /**
  * _printf - custom printf function
@@ -32,7 +32,7 @@ int _printf(const char *format, ...)
 		}
 		else if (*format == '%' && *(format + 1) == 'd')
 		{
-			int num = va_args(args, int);
+			int num = va_arg(args, int);
 
 			printf("%d", num);
 
@@ -41,14 +41,14 @@ int _printf(const char *format, ...)
 		}
 		else
 		}
+		{
 		putchar(*format);
 		count++;
 		}
-
+		{
 		format++;
-
-	}
+		}
 	va_end(args);
 
-	return (count);
+	return(count);
 }
