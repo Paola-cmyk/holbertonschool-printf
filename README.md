@@ -10,5 +10,5 @@ This is our midterm project of our Software Engeneering journey. We will collabo
 ## Authors
 
 - Kevin Burgos
-- [Paola-cmyk] Paola Gonzalez
-- [LuvliNay] Nayshka Oliveras
+- [Paola-cmyk]Paola Gonzalez
+- [LuvliNay]Nayshka Oliveras
