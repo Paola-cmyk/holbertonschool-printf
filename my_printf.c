@@ -1,5 +1,5 @@
 #include <stdarg.h>
-#include "printf.h"
+#include "main.h"
 #include <stdio.h>
 /**
  * print_char - prints a single character
