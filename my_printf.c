@@ -1,6 +1,51 @@
-#include <limits.h>
+#include <stdarg.h>
 #include "printf.h"
 #include <stdio.h>
+/**
+ * print_char - prints a single character
+ * @p: character to print
+ *
+ * Return: number of charaters printed
+ */
+int print_char(char p)
+{
+	putchar(p);
+	return (1);
+}
+
+/**
+ * print_string - prints a string
+ * @str: string to print
+ *
+ * Return: numbers of characters printed
+ */
+int print_string(char *str)
+{
+	int count = 0;
+
+	if (str == NULL)
+		str = "(null)";
+
+	while (*str)
+	{
+		putchar(*str);
+		str++;
+		count++;
+	}
+
+	return (count);
+}
+
+/**
+ * print_percent - prints a literal '%'
+ *
+ * Return: the number of characters printed
+ */
+int print_percent(void)
+{
+	putchar('%');
+	return (1);
+}
 
 /**
  * _printf - custom printf function
@@ -8,74 +53,36 @@
  *
  * Return: the number of characters printed
  */
-
 int _printf(const char *format, ...)
 {
 	va_list args;
 	int count = 0;
 
 	va_start(args, format);
-
 	while (*format)
 	{
-		if (*format == '%' && *(format + 1) == 's')
+		if (*format == '%' && *(format + 1) == 'c')
 		{
-
-		char *str = va_arg(args, char *);
-
-		while (*str)
-		{
-			putchar(*str);
-			str++;
-			count++;
+			count += print_char(va_arg(args, int));
+			format++;
 		}
-
-		format++;
-	}
-	else if (*format == '%' && *(format + 1) == 'd')
-	{
-			int num = va_arg(args, int);
-
-			if (num == 0)
-			{
-
-			putchar('0');
+		else if (*format == '%' && *(format + 1) == 's')
+		{
+			count += print_string(va_arg(args, char *));
+			format++;
+		}
+		else if (*format == '%' && *(format + 1) == '%')
+		{
+			count += print_percent();
+			format++;
+		}
+		else
+		{
+			putchar(*format);
 			count++;
-			}
-			else
-			{
-			int digits[10];
-			int i = 0;
-
-			if (num < 0)
-			{
-			putchar('-');
-			num = -num;
-			count++;
-			}
-
-			while (num > 0)
-			{
-			digits[i++] = num % 10;
-			num != 10;
-			}
-
-			while (--i >= 0)
-			{
-			putchar(digits[i] + '0');
-			count++;
-			}
 		}
 		format++;
 	}
-	else
-	{
-		putchar(*format);
-		count++;
-	}
-	format++;
-	}
-	
 	va_end(args);
 
 	return (count);
