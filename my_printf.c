@@ -18,8 +18,8 @@ int _printf(const char *format, ...)
 
 	while (*format)
 	{
-	if (*format == '%' && *(format + 1) == 's')
-	}
+		if (*format == '%' && *(format + 1) == 's')
+		{
 
 		char *str = va_arg(args, char *);
 
@@ -29,28 +29,54 @@ int _printf(const char *format, ...)
 			str++;
 			count++;
 		}
-		{
-		format++;
-		}
-		else if (*format == '%' && *(format + 1) == 'd')
-		{
-			int num = va_arg(args, int);
 
-			printf("%d", num);
-
-			count++;
-			format++;
-		}
-		else
-
-		{
-		putchar(*format);
-		count++;
-		}
-		{
 		format++;
 	}
-va_end(args);
+	else if (*format == '%' && *(format + 1) == 'd')
+	{
+			int num = va_arg(args, int);
 
-return (count);
+			if (num == 0)
+			{
+
+			putchar('0');
+			count++;
+			}
+			else
+			{
+			int digits[10];
+			int i = 0;
+
+			if (num < 0)
+			{
+			putchar('-');
+			num = -num;
+			count++;
+			}
+
+			while (num > 0)
+			{
+			digits[i++] = num % 10;
+			num != 10;
+			}
+
+			while (--i >= 0)
+			{
+			putchar(digits[i] + '0');
+			count++;
+			}
+		}
+		format++;
+	}
+	else
+	{
+		putchar(*format);
+		count++;
+	}
+	format++;
+	}
+	
+	va_end(args);
+
+	return (count);
 }
