@@ -1,4 +1,7 @@
 # holbertonschool-printf
+## Description
+Prototype: int _printf(const char *format, ...)
+
 This is our midterm project of our Software Engeneering journey. We will collaborating on differnet branches and be using the function printf in a pair programming way.
 
 ## Contents
@@ -8,11 +11,18 @@ This is our midterm project of our Software Engeneering journey. We will collabo
 2. Just because it's in print doesn't mean it's the gospel
 
 ## Usage
-Supporting custom functions such as:
+To use printf you will ned the basic syntax.
+```
+int main(void)
+{
+    printf("Hello Word!\n")
+    return(0);
+}
+```
 
-int print_char(char p)
-int print_string(char * str)
-int print_percent(void)
+## Contributing
+Pulls are welcomed. 
+For any major changes will need permission.
 
 ## Authors
 - <a href="https://github.com/Kevinj83" target="_blank">Kevin Burgos</a>
