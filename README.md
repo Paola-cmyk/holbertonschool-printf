@@ -9,6 +9,7 @@ This is our midterm project of our Software Engeneering journey. We will collabo
 
 ## Usage
 Supporting custom functions such as:
+
 int print_char(char p)
 int print_string(char * str)
 int print_percent(void)
