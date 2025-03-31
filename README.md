@@ -1,6 +1,5 @@
 # holbertonschool-printf
 ## Description
-Prototype: int _printf(const char *format, ...)
 
 This is our midterm project of our Software Engeneering journey. We will collaborating on differnet branches and be using the function printf in a pair programming way.
 
@@ -11,7 +10,7 @@ This is our midterm project of our Software Engeneering journey. We will collabo
 2. Just because it's in print doesn't mean it's the gospel
 
 ## Usage
-To use printf you will ned the basic syntax.
+To use printf you will need the basic syntax.
 ```
 int main(void)
 {
@@ -21,13 +20,16 @@ int main(void)
 ```
 
 ## Contributing
-Pulls are welcomed. 
+
+Pulls are welcomed.
 For any major changes will need permission.
 
 ## Authors
+
 - <a href="https://github.com/Kevinj83" target="_blank">Kevin Burgos</a>
 - <a href="https://github.com/Paola-cmyk" target="_blank">Paola Gonzalez</a>
 - <a href="https://github.com/LuvliNay" target="_blank">Nayska Oliveras</a>
 
 ## License
+
 This code can be used when allowed permission.
