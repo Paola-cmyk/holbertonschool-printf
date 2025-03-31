@@ -14,7 +14,7 @@ To use printf you will need the basic syntax.
 ```
 int main(void)
 {
-    printf("Hello Word!\n")
+    printf("Hello Word!\n");
     return(0);
 }
 ```
