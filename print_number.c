@@ -1,3 +1,4 @@
+#include <stdio.h>
 #include <limits.h>
 #include "main.h"
 
@@ -13,15 +14,15 @@ int print_number(int n)
 
     if (n == INT_MIN)
     {
-        _putchar('-');
+        putchar('-');
         count++;
-        _putchar('2');
+        putchar('2');
         count++;
         num = 147483648;
     }
     else if (n < 0)
     {
-        _putchar('-');
+        putchar('-');
         count++;
         num = -n;
     }
@@ -33,7 +34,7 @@ int print_number(int n)
     if (num / 10)
         count += print_number(num / 10);
 
-    _putchar((num % 10) + '0');
+    putchar((num % 10) + '0');
     count++;
 
     return (count);

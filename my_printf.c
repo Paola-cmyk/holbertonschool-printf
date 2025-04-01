@@ -1,95 +1,70 @@
+
 #include <stdarg.h>
 #include "main.h"
 #include <stdio.h>
-/**
- * print_char - prints a single character
- * @p: character to print
- *
- * Return: number of charaters printed
- */
-int print_char(char p)
-{
-	putchar(p);
-	return (1);
-}
 
+/* Declare the print functions */
+int print_char(char p);
+int print_string(char *str);
+int print_percent(void);
+int print_number(int n);
+int print_unsigned(unsigned int n);
+int print_octal(unsigned int n);
+int print_hex(unsigned int n, int is_uppercase);
 
-/**
- * print_string - prints a string
- * @str: string to print
- *
- * Return: numbers of characters printed
- */
-int print_string(char *str)
-{
-	int count = 0;
-
-	if (str == NULL)
-		str = "(null)";
-
-	while (*str)
-	{
-		putchar(*str);
-		str++;
-		count++;
-	}
-
-	return (count);
-}
-
-/**
- * print_percent - prints a literal '%'
- *
- * Return: the number of characters printed
- */
-int print_percent(void)
-{
-	putchar('%');
-	return (1);
-}
-
-/**
- * _printf - custom printf function
- * @format: the format string containing the format specifiers
- *
- * Return: the number of characters printed
- */
+/* _printf function as usual */
 int _printf(const char *format, ...)
 {
-	va_list args;
-	int count = 0;
+    va_list args;
+    int count = 0;
 
-	va_start(args, format);
-	while (*format)
-	{
-		if (*format == '%' && *(format + 1) == 'c')
-		{
-			count += print_char(va_arg(args, int));
-			format++;
-		}
-		else if (*format == '%' && *(format + 1) == 's')
-		{
-			count += print_string(va_arg(args, char *));
-			format++;
-		}
-		else if (*format == '%' && *(format + 1) == '%')
-		{
-			count += print_percent();
-			format++;
-		}
-		else if (*format == '%' && (*(format + 1) == 'd' || *(format + 1) == 'i'))
-		{
-			count += print_number(va_arg(args, int));
-			format++;
-		}
-		else
-		{
-			putchar(*format);
-			count++;
-		}
-		format++;
-	}
-	va_end(args);
+    va_start(args, format);
+    while (*format)
+    {
+        if (*format == '%' && *(format + 1) == 'c')
+        {
+            count += print_char(va_arg(args, int));
+            format++;
+        }
+        else if (*format == '%' && *(format + 1) == 's')
+        {
+            count += print_string(va_arg(args, char *));
+            format++;
+        }
+        else if (*format == '%' && *(format + 1) == '%')
+        {
+            count += print_percent();
+            format++;
+        }
+        else if (*format == '%' && (*(format + 1) == 'd' || *(format + 1) == 'i'))
+        {
+            count += print_number(va_arg(args, int));
+            format++;
+        }
+        else if (*format == '%' && *(format + 1) == 'u')
+        {
+            count += print_unsigned(va_arg(args, unsigned int));
+            format++;
+        }
+        else if (*format == '%' && *(format + 1) == 'o')
+        {
+            count += print_octal(va_arg(args, unsigned int));
+            format++;
+        }
+        else if (*format == '%' && (*(format + 1) == 'x' || *(format + 1) == 'X'))
+        {
+            count += print_hex(va_arg(args, unsigned int), (*(format + 1) == 'X'));
+            format++;
+        }
+        else
+        {
+            putchar(*format);
+            count++;
+        }
+        format++;
+    }
+    va_end(args);
 
-	return (count);
+    return (count);
 }
+
