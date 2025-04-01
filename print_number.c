@@ -16,7 +16,7 @@ int print_number(int n)
         _putchar('-');
         count++;
         _putchar('2');
-	count++;
+        count++;
         num = 147483648;
     }
     else if (n < 0)

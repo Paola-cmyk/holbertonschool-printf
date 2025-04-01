@@ -47,6 +47,9 @@ int main(void)
 	_printf("Len:[%d]\n", len);
 	printf("Len:[%d]\n", len2);
 	_printf("Unknown:[%r]\n");
+	_printf("There is %d bytes in %d KB\n", 1024, 1);
+	_printf("%d - %d = %d\n", 1024, 2048, -1024);
+	_printf("%d + %d = %d\n", INT_MIN, INT_MAX, (INT_MIN + INT_MAX));
 
 	return (0);
 }

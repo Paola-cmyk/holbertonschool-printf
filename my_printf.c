@@ -13,6 +13,7 @@ int print_char(char p)
 	return (1);
 }
 
+
 /**
  * print_string - prints a string
  * @str: string to print
