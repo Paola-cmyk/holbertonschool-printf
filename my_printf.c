@@ -76,6 +76,11 @@ int _printf(const char *format, ...)
 			count += print_percent();
 			format++;
 		}
+		else if (*format == '%' && (*(format + 1) == 'd' || *(format + 1) == 'i'))
+		{
+			count += print_number(va_arg(args, int));
+			format++;
+		}
 		else
 		{
 			putchar(*format);
